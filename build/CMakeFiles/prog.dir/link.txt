@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/prog.dir/src/main.cpp.o CMakeFiles/prog.dir/src/game.cpp.o CMakeFiles/prog.dir/src/pacman.cpp.o CMakeFiles/prog.dir/src/renderer.cpp.o CMakeFiles/prog.dir/src/controller.cpp.o  -o prog   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib /usr/local/lib/libSDL2.so /usr/lib/x86_64-linux-gnu/libSDL2_image.so 
