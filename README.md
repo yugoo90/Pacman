@@ -22,4 +22,4 @@
 1. Clone this repo
 2. Make a build directrory in the top level directory: 'mkdir build && cd build'
 3. Compile: 'cmake .. && make'
-4. Run it: './prog'
+4. Run it: './Pac'
