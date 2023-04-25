@@ -55,11 +55,19 @@ void Renderer::Render(Pacman const pacman){
     SDL_RenderClear(_renderer);
 
     // Render Pacman Image
+
+    // Create surface
     auto surface = IMG_Load(pacman.getPath().c_str());
+    
+    // Check if surface was created
     if(!surface){
         std::cerr << "Failed to create surface"<< std::endl;
     }
+
+    // Create texture from surface
     _pacmanTexture = SDL_CreateTextureFromSurface(_renderer, surface);
+
+    // Check if texture was created
     if(!_pacmanTexture){
         std::cerr << "Failed to create texture. \n";
     }

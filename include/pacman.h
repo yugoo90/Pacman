@@ -1,7 +1,6 @@
 #ifndef PACMAN_H
 #define PACMAN_H
 
-#include "renderer.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <string>
