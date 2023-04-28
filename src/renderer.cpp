@@ -58,7 +58,7 @@ void Renderer::Render(Pacman const pacman){
 
     // Create surface
     auto surface = IMG_Load(pacman.getPath().c_str());
-    
+
     // Check if surface was created
     if(!surface){
         std::cerr << "Failed to create surface"<< std::endl;
@@ -71,12 +71,8 @@ void Renderer::Render(Pacman const pacman){
     if(!_pacmanTexture){
         std::cerr << "Failed to create texture. \n";
     }
-    if(_pacmanTexture){
+    else {
         SDL_RenderCopy(_renderer, _pacmanTexture, nullptr, &block);
-    }
-    else{
-        SDL_SetRenderDrawColor(_renderer,0xC8, 0x00, 0xC8, 0xFF);
-        SDL_RenderFillRect(_renderer, &block);
     }
     
     SDL_FreeSurface(surface);

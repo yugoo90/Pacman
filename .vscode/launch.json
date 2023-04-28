@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -8,8 +9,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/yugoo90/Pacman",
-      "program": "/home/yugoo90/Pacman/build/Debug/outDebug",
+      "cwd": "${workspaceFolder}/build",
+      "program": "${workspaceFolder}/build/Pac",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
