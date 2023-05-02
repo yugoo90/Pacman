@@ -71,8 +71,13 @@ void Renderer::Render(Pacman const pacman){
     if(!_pacmanTexture){
         std::cerr << "Failed to create texture. \n";
     }
-    else {
+
+    if(_pacmanTexture){
         SDL_RenderCopy(_renderer, _pacmanTexture, nullptr, &block);
+    }
+    else {
+        SDL_SetRenderDrawColor(_renderer,0xC8, 0x00, 0xC8, 0xff);
+        SDL_RenderFillRect(_renderer, &block);
     }
     
     SDL_FreeSurface(surface);

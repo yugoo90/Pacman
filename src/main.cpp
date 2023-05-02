@@ -17,5 +17,7 @@ int main(int argc, char **argv){
     Pacman pac (KGridHeight, KGridWidth, "./pacman.png");
 
     renderer.Render(pac);
+
+    system("read -p 'Press Enter to continue...' var");
     return 0;
 }
