@@ -44,19 +44,18 @@ Renderer::~Renderer(){
 }
 
 void Renderer::Render(Pacman const pacman){
+    // Clear Screen
+    SDL_SetRenderDrawColor(_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
+    SDL_RenderClear(_renderer);
+
+    // Render Pacman Image
     SDL_Rect block;
     block.w = _grid_width / 2;
     block.h = _grid_height / 2;
     block.x = _screen_width / 8;
     block.y = _screen_height / 6;
 
-    // Clear Screen
-    SDL_SetRenderDrawColor(_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
-    SDL_RenderClear(_renderer);
-
-    // Render Pacman Image
-
-    // Create surface
+    // Load Pacman Image surface
     auto surface = IMG_Load(pacman.getPath().c_str());
 
     // Check if surface was created
@@ -72,14 +71,13 @@ void Renderer::Render(Pacman const pacman){
         std::cerr << "Failed to create texture. \n";
     }
 
-    if(_pacmanTexture){
-        SDL_RenderCopy(_renderer, _pacmanTexture, nullptr, &block);
-    }
-    else {
-        SDL_SetRenderDrawColor(_renderer,0xC8, 0x00, 0xC8, 0xff);
-        SDL_RenderFillRect(_renderer, &block);
-    }
-    
+    // Copy texture to the renderer
+    SDL_RenderCopy(_renderer, _pacmanTexture, nullptr, &block);
+
+    // Render the changes to the screen
+    SDL_RenderPresent(_renderer);
+
+    // Clean up
     SDL_FreeSurface(surface);
     
 }
